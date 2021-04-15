@@ -1,0 +1,48 @@
+
+<div class="card border-primary mb-3">
+  <div class="card-header">Inventory</div>
+  <div class="card-body text-primary">
+
+
+    <div class="input-group mb-3">
+    <div class="custom-file">
+      <input (change)="selectArticlesFile($event)" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+
+    </div>
+    <div class="input-group-append" style="padding-left: 30px;">
+      <button (click)="uploadArticles()" [disabled]="!articlesfile" class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload inventory</button>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+  <div class="custom-file">
+    <input (change)="selectProductsFile($event)" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+  </div>
+  <div class="input-group-append" style="padding-left: 30px;">
+    <button (click)="uploadProducts()" [disabled]="!productsfile" class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload Products</button>
+  </div>
+</div>
+  <h5 class="card-title">Product list</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Product Name</td>
+          <td>Available</td>
+          <td>Remove/Sell</td>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>{{product.available}}</td>
+          <td>
+            <button type="button" name="remove" (click)="delete(product)" class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

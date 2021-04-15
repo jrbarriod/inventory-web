@@ -1,0 +1,8 @@
+#wrap {
+  padding: 50px;
+}
+#outlet {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+}
